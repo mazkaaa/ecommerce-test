@@ -1,15 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { MainContentPage, Navbar } from './components/container';
+import { ProductProvider } from './components/context/product-provider';
+import { ThemeProvider } from './components/context/theme-provider';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <main>
-      <h1>Main</h1>
-    </main>
+    <ThemeProvider defaultTheme='system' storageKey='theme'>
+      <ProductProvider>
+        <Navbar />
+        <MainContentPage />
+      </ProductProvider>
+    </ThemeProvider>
   );
 }
 
