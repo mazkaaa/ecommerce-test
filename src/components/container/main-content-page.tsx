@@ -34,6 +34,7 @@ export const MainContentPage = () => {
       </section>
       <section>
         <Button
+          disabled={isFetchLoading}
           onClick={() => {
             setLimit(limit + 10);
           }}

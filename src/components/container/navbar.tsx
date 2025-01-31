@@ -16,8 +16,15 @@ export const Navbar = () => {
       </section>
       <section>
         <div className='flex items-center space-x-2'>
-          <ShoppingBasket />
-          <span className='text-foreground'>${defineTotalPrice}</span>
+          <div className='relative'>
+            <ShoppingBasket size={26} />
+            <div className='absolute -right-1 -top-1 flex size-4 items-center justify-center rounded-full bg-primary text-xs text-background'>
+              {storage.length}
+            </div>
+          </div>
+          <span className='tabular-nums text-foreground'>
+            ${defineTotalPrice.toFixed(2)}
+          </span>
         </div>
       </section>
     </header>
