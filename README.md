@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+# Ecommerce Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern e-commerce test project built with React, TypeScript, and Vite. The project uses TailwindCSS for styling and includes various development tools to enhance code quality and maintainability.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18 with modern UI components
+- TypeScript for static typing
+- TailwindCSS for styling
+- ESLint and Prettier for code formatting and linting
+- Husky and lint-staged for pre-commit hooks
+- Vite for fast development and builds
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Ensure you have [Node.js](https://nodejs.org/) installed, then clone the repository and install dependencies:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Scripts
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **`npm run dev`** - Start the development server using Vite.
+- **`npm run build`** - Compile TypeScript and build the project.
+- **`npm run preview`** - Preview the production build.
+- **`npm run lint`** - Run ESLint to check for code issues.
+- **`npm run prepare`** - Set up Husky for Git hooks.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Development Tools
+
+### Linting & Formatting
+
+- **ESLint** - Ensures code quality.
+- **Prettier** - Formats code for consistency.
+- **Husky & lint-staged** - Run linters before committing changes.
+
+### Styling
+
+- **TailwindCSS** - Utility-first CSS framework.
+- **Tailwind Merge & Tailwind Animate** - Enhancements for TailwindCSS.
+
+### UI Components
+
+- **Radix UI** - Accessible components (Dialog, Select, Slot).
+- **Lucide Icons** - Beautiful SVG icons.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Open a pull request.
+
+## License
+
+This project is private and does not have an open-source license.

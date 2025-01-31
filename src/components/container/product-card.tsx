@@ -7,6 +7,7 @@ import { ShoppingBasket } from 'lucide-react';
 
 interface PROPS {
   product: IProductResponse;
+  onClick?: (product: IProductResponse) => void;
 }
 export const ProductCard = (props: PROPS) => {
   const { addItem, removeItem, storage } = useProduct();
@@ -49,16 +50,30 @@ export const ProductCard = (props: PROPS) => {
           className='size-full rounded-lg object-contain'
         />
       </section>
-      <section>
+      <section className='space-y-2'>
         <h2 className='truncate text-sm font-semibold text-foreground'>
           {props.product.title}
         </h2>
-        <h3 className='text-muted-foreground'>
-          <span className='text-sm font-medium'>Price: </span>
-          <span className='text-sm font-medium'>${props.product.price}</span>
-        </h3>
+        <section className='text-muted-foreground'>
+          <p className='text-sm font-medium'>Price: ${props.product.price}</p>
+          <p className='text-sm font-medium'>
+            Rating: {props.product.rating}/5
+          </p>
+        </section>
       </section>
-      <section>{defineButton}</section>
+      <section className='flex flex-row space-x-2'>
+        <Button
+          onClick={() => {
+            if (props.onClick) {
+              props.onClick(props.product);
+            }
+          }}
+          variant='outline'
+        >
+          View Detail
+        </Button>
+        {defineButton}
+      </section>
     </Card>
   );
 };

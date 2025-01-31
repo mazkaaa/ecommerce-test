@@ -5,4 +5,5 @@ export interface IProductResponse {
   category: string;
   description: string;
   image: string;
+  rating: number;
 }
